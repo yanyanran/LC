@@ -1,17 +1,20 @@
 #include <stdio.h>
 int main()
 {
-	int i, j, n, m;
-	scanf("%d", &i);
-	for(j = 0; (1 + j) * j / 2.0 < i; j++); 
-	n = j - 1;
-	n = (1 + n) * n / 2.0;
-	m = (1 + j) * j / 2.0;
-	m = m - i + 1;
-	n = i - n;
-	if(j % 2 == 0)
-		printf("%d/%d", n, m);
+	int n;
+	int i=0, j=0;
+	scanf("%d", &n);
+
+	while (n > j)
+	{
+		i++;  //i表示行数
+		j = j + i;
+	}
+
+	if (i % 2 == 0)
+		printf("%d/%d", i-(j-n), j-n+1);
 	else
-		printf("%d/%d", m, n);
+		printf("%d/%d", j-n+1, i-(j-n));
+
 	return 0;
-}  
+}
