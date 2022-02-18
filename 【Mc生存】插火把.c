@@ -1,30 +1,3 @@
-/*#include <stdio.h> 
-int n,m,k,a,b,str;
-int s[5005][5005];
-int pd(int x, int y) //判断是否越界 
-{ 
-    if(x<1||y<1||x>n||y>n) return 0;
-    else return 1;
-};
-int main()
-{
-    scanf("%d %d %d",&n,&m,&k);
-    for(int i=1;i<=m+k;i++)
-    {
-        scanf("%d %d",&a,&b);
-
-        for(int x=-2;x<=2;x++)
-            for(int y=-2;y<=2;y++)
-                if((i>m||abs(x)+abs(y)<=2)&&pd(x+a,b+y)) //abs()绝对值函数
-                    s[x+a][b+y]++;
-    }
-    for(int i=1;i<=n;i++)
-        for(int j=1;j<=n;j++)
-            str+=(s[i][j]==0);
-    printf("%d",str);
-    return 0;
-}*/
-
 #include<stdio.h>
 int main()
 {
@@ -67,12 +40,38 @@ int main()
     {
         for(int j=3;j<=n+2;j++)
         {
-            if(a[i][j]==0) //没照到时答案+1 
-            {
-                str++;
-            }
+            if(a[i][j]==0) str++;  //当为0时、计数器+1
         }
     }
+    printf("%d",str);
+    return 0;
+}
+
+//另外一种看不懂的枚举方法，更简单
+#include <stdio.h> 
+#include <stdlib.h>
+int n,m,k,a,b,str;
+int s[5005][5005];
+int pd(int x, int y) //判断是否越界 
+{ 
+    if(x<1||y<1||x>n||y>n) return 0;
+    else return 1;
+};
+int main()
+{
+    scanf("%d %d %d",&n,&m,&k);
+    for(int i=1;i<=m+k;i++)
+    {
+        scanf("%d %d",&a,&b);
+
+        for(int x=-2;x<=2;x++)
+            for(int y=-2;y<=2;y++)
+                if((i>m||abs(x)+abs(y)<=2)&&pd(x+a,b+y)) //abs()绝对值函数
+                    s[x+a][b+y]++;
+    }
+    for(int i=1;i<=n;i++)
+        for(int j=1;j<=n;j++)
+            str+=(s[i][j]==0);
     printf("%d",str);
     return 0;
 }
