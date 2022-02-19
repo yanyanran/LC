@@ -1,18 +1,18 @@
 #include <stdio.h>
 int main()
 {
-	int i,n,suma,sumb;
+	int i,n,suma=0,sumb=0;
 	scanf("%d",&n);
 	while(n)
 	{
-		for(i=1,suma=0;i<=n/2;i++)
+		for(i=1;i<=n/2;i++)
 		{
 			if(n%i==0)
 			{
 				suma+=i;
 			}
 		}
-		for(i=1,sumb=0;i<=suma/2;i++)
+		for(i=1;i<=suma/2;i++)  //直接在suma里找！
 		{
 			if(suma%i==0)
 			{
@@ -27,4 +27,4 @@ int main()
 		n++;
 	}
 	return 0;
-} 
+}
