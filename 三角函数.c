@@ -26,7 +26,7 @@ int main()
         b=c; 
         c=t;
 	} 
-	for(int i=1;i<a/2;i++) //找a和c最大公因数
+	for(int i=1;i<a/2;i++) //要化简，找a和c最大公因数，不然有个测试点过不去
     {
 		if(a%i==0&&c%i==0)
         {
