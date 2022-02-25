@@ -2,8 +2,11 @@
 int main()
 {
     char in[100]; 
-    int n, j; 
-    scanf("%d%s", &n, in); //读入 
-    for(j = 0; in[j] != '\0'; j++)
-        putchar((in[j]-'a'+n)%26+'a'); 
+    int n,i; 
+    scanf("%d %s", &n, in);
+    for(i=0;in[i]!='\0';i++)
+    {
+        putchar((in[i]-'a'+n)%26+'a'); 
+    }
+    return 0;
 }
